@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const Admin_Login = new mongoose.Schema({
-    Email: { type: String, required: true, Unique: true },
+    Email: { type: String, required: true, unique: true },
     Password: { type: String, required: true },
-    Username: { type: String, required: true, Unique: true },
-    Id: { type: Schema.Types.ObjectId, ref: 'Admins', required: true, Unique: true },
+    Username: { type: String, required: true, unique: true },
+    Id: { type: Schema.Types.ObjectId, ref: 'Admins', required: true, unique: true },
 },
 
     {

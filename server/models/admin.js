@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 const Admins = new mongoose.Schema({
-    Name: { type: String, required: true },
+    Name: { type: String, required: true, unique: true },
     Role: { type: String, required: true },
     Address: { type: String, required: true },
-    Contact: { type: Number, required: true, Unique: true },
+    Contact: { type: Number, required: true, unique: true },
     Religion: { type: String, required: true },
-    Joining: { type: Date, required: true },
+    Joining: { type: String, required: true },
 
 },
 
