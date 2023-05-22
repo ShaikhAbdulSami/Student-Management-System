@@ -2,9 +2,10 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const env = require("dotenv").config();
 const mongoose = require("mongoose");
-
+const bodyParser = require("body-parser");
 // Routes
 const homeView = require("./routes/index")
+const admins = require("./routes/Admin/index");
 
 //Creating Server
 const app = express();
@@ -14,6 +15,9 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 // Using Cookie Parser
 app.use(cookieParser());
+// Using Body Parser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //Defining Port
 const port = process.env.PORT || 3000;
@@ -34,3 +38,4 @@ mongoose
     });
 
 app.use('/', homeView)
+app.use("/", admins)
