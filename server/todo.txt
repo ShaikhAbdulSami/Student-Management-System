@@ -1,0 +1,7 @@
+ADMIN:
+
+1) Get All Admin    | x
+2) Create new Admin | x
+3) Get Admin by ID
+4) Edit Admin details
+5) Del Admin
